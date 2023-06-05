@@ -13,6 +13,7 @@
 		EB2E17662A2D93BA00BA1E5C /* PTSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB2E17612A2D93BA00BA1E5C /* PTSans-Regular.ttf */; };
 		EB2E17672A2D93BA00BA1E5C /* PTSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB2E17622A2D93BA00BA1E5C /* PTSans-Bold.ttf */; };
 		EB2E17692A2D95A400BA1E5C /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E17682A2D95A400BA1E5C /* SplashScreenView.swift */; };
+		EB2E176C2A2E4EE200BA1E5C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E176B2A2E4EE200BA1E5C /* LoginView.swift */; };
 		EB3792B72A2D7F10007F02EF /* TravelleRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3792B62A2D7F10007F02EF /* TravelleRApp.swift */; };
 		EB3792B92A2D7F10007F02EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3792B82A2D7F10007F02EF /* ContentView.swift */; };
 		EB3792BB2A2D7F12007F02EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB3792BA2A2D7F12007F02EF /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		EB2E17622A2D93BA00BA1E5C /* PTSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Bold.ttf"; sourceTree = "<group>"; };
 		EB2E17682A2D95A400BA1E5C /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		EB2E176A2A2D970300BA1E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB2E176B2A2E4EE200BA1E5C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EB3792B32A2D7F10007F02EF /* TravelleR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelleR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3792B62A2D7F10007F02EF /* TravelleRApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelleRApp.swift; sourceTree = "<group>"; };
 		EB3792B82A2D7F10007F02EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,9 +80,10 @@
 			children = (
 				EB2E175D2A2D93BA00BA1E5C /* PT_Sans */,
 				EB3792B62A2D7F10007F02EF /* TravelleRApp.swift */,
-				EB2E176A2A2D970300BA1E5C /* Info.plist */,
+				EB2E176B2A2E4EE200BA1E5C /* LoginView.swift */,
 				EB2E17682A2D95A400BA1E5C /* SplashScreenView.swift */,
 				EB3792B82A2D7F10007F02EF /* ContentView.swift */,
+				EB2E176A2A2D970300BA1E5C /* Info.plist */,
 				EB3792BA2A2D7F12007F02EF /* Assets.xcassets */,
 				EB3792BC2A2D7F12007F02EF /* Preview Content */,
 			);
@@ -172,6 +175,7 @@
 			files = (
 				EB3792B92A2D7F10007F02EF /* ContentView.swift in Sources */,
 				EB3792B72A2D7F10007F02EF /* TravelleRApp.swift in Sources */,
+				EB2E176C2A2E4EE200BA1E5C /* LoginView.swift in Sources */,
 				EB2E17692A2D95A400BA1E5C /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
