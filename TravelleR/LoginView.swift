@@ -22,7 +22,7 @@ struct LoginView: View {
                 .init(red: 0.992, green: 0.992, blue: 0.953)
                 .ignoresSafeArea()
             
-            NavigationView {
+            NavigationStack {
                 VStack {
                     Text("Login with email")
                         .font(Font.custom("PTSans-Regular", size: 24))
@@ -44,14 +44,16 @@ struct LoginView: View {
                         .border(authStatus == 2 ? Color.red : Color.clear, width: authStatus == 2 ? 1.0 : 0.0)
 
                     
-                    Button("Login") {
+                    Button(action: {
                         authenticateUser(email: email, password: password)
+                    }) {
+                        Text("Login")
+                            .font(Font.custom("PTSans-Regular", size: 16))
+                            .foregroundColor(.white)
+                            .frame(width: 320, height: 50)
+                            .background(Color.black)
+                            .cornerRadius(10)
                     }
-                    .font(Font.custom("PTSans-Regular", size: 16))
-                    .foregroundColor(.white)
-                    .frame(width: 320, height: 50)
-                    .background(Color.black)
-                    .cornerRadius(10)
                     
                 }
                 .fullScreenCover(isPresented: $isAuthenticated, content: {
