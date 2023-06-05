@@ -10,73 +10,79 @@ import SwiftUI
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
-    @State private var wrongEmail = 0
-    @State private var wrongPassword = 0
+    
+    @State private var authStatus = 4
+    @State private var isAuthenticated = false
     @State private var showingLoginScreen = false
     @State private var path = [String]()
     
     var body: some View {
-        NavigationStack (path: $path) {
-            ZStack {
-                Color.init(red: 0.992, green: 0.992, blue: 0.953)
-                    .ignoresSafeArea()
-                
+        ZStack {
+            Color
+                .init(red: 0.992, green: 0.992, blue: 0.953)
+                .ignoresSafeArea()
+            
+            NavigationView {
                 VStack {
                     Text("Login with email")
                         .font(Font.custom("PTSans-Regular", size: 24))
                     
                     TextField("Email", text: $email)
-                                            .font(Font.custom("PTSans-Regular", size: 16))
-//                                            .foregroundColor(.black)
-                                            .padding()
-                                            .frame(width: 320, height: 50)
-                                            .background(Color.black.opacity(0.1))
-                                            .cornerRadius(10)
-                                            .border(.red, width: CGFloat(wrongEmail))
-                                        
+                        .font(Font.custom("PTSans-Regular", size: 16))
+                        .padding()
+                        .frame(width: 320, height: 50)
+                        .background(Color.black.opacity(0.1))
+                        .cornerRadius(10)
+                        .border(authStatus == 1 ? Color.red : Color.clear, width: authStatus == 1 ? 1.0 : 0.0)
+                    
                     SecureField("Password", text: $password)
                         .font(Font.custom("PTSans-Regular", size: 16))
                         .padding()
                         .frame(width: 320, height: 50)
                         .background(Color.black.opacity(0.1))
                         .cornerRadius(10)
-                        .border(.red, width: CGFloat(wrongPassword))
+                        .border(authStatus == 2 ? Color.red : Color.clear, width: authStatus == 2 ? 1.0 : 0.0)
+
                     
                     Button("Login") {
-                            authenticateUser(email: email, password: password)
-                            }
-                        .font(Font.custom("PTSans-Regular", size: 16))
-                        .foregroundColor(.white)
-                        .frame(width: 320, height: 50)
-                        .background(Color.black)
-                        .cornerRadius(10)
-                        
-                    
-//                    NavigationLink(value: showingLoginScreen)
-                }
-                .navigationDestination(for: String.self) { string in
-                    if showingLoginScreen {
-                        ContentView()
+                        authenticateUser(email: email, password: password)
                     }
+                    .font(Font.custom("PTSans-Regular", size: 16))
+                    .foregroundColor(.white)
+                    .frame(width: 320, height: 50)
+                    .background(Color.black)
+                    .cornerRadius(10)
+                    
                 }
-            }//.navigationBarHidden(true)
+                .fullScreenCover(isPresented: $isAuthenticated, content: {
+                    ContentView()
+                })
+            }
         }
     }
     
-    func authenticateUser(email: String, password: String) {
-            if email.lowercased() == "CuriousR" {
-                wrongEmail = 0
-                if password.lowercased() == "abc123" {
-                    wrongPassword = 0
-                    showingLoginScreen = true
-                } else {
-                    wrongPassword = 1
-                }
-            } else {
-                wrongEmail = 1
-            }
+    private func authenticateUser(email: String, password: String) {
+        let authenticationResult = performAuthentication(email: email, password: password)
+        
+        if authenticationResult == 0 {
+            isAuthenticated = true
         }
+    }
+    
+    private func performAuthentication(email: String, password: String) -> Int {
+        if email.lowercased() == "curiousr" {
+            if password.lowercased() == "abc123" {
+                authStatus = 0 // Success
+                showingLoginScreen = true
+                return 0
+            }
+            authStatus = 2 // Wrong Password
+        } else { authStatus = 1 } // Wrong Email
+        return 1
+    }
+    
 }
+
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
