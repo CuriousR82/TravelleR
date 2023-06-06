@@ -34,6 +34,7 @@ struct LoginView: View {
                         .background(Color.black.opacity(0.1))
                         .cornerRadius(10)
                         .border(authStatus == 1 ? Color.red : Color.clear, width: authStatus == 1 ? 1.0 : 0.0)
+
                     
                     SecureField("Password", text: $password)
                         .font(Font.custom("PTSans-Regular", size: 16))
@@ -42,6 +43,7 @@ struct LoginView: View {
                         .background(Color.black.opacity(0.1))
                         .cornerRadius(10)
                         .border(authStatus == 2 ? Color.red : Color.clear, width: authStatus == 2 ? 1.0 : 0.0)
+
 
                     
                     Button(action: {
@@ -56,9 +58,9 @@ struct LoginView: View {
                     }
                     
                 }
-                .fullScreenCover(isPresented: $isAuthenticated, content: {
+                .fullScreenCover(isPresented: $isAuthenticated) {
                     ContentView()
-                })
+                }
             }
         }
     }
