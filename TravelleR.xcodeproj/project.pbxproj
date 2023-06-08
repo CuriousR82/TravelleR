@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3F58A692A32834B008E2A8B /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F58A682A32834B008E2A8B /* TripsView.swift */; };
 		EB2E17632A2D93BA00BA1E5C /* PTSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB2E175E2A2D93BA00BA1E5C /* PTSans-Italic.ttf */; };
 		EB2E17642A2D93BA00BA1E5C /* PTSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB2E175F2A2D93BA00BA1E5C /* PTSans-BoldItalic.ttf */; };
 		EB2E17652A2D93BA00BA1E5C /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = EB2E17602A2D93BA00BA1E5C /* OFL.txt */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E3F58A682A32834B008E2A8B /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
 		EB2E175E2A2D93BA00BA1E5C /* PTSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Italic.ttf"; sourceTree = "<group>"; };
 		EB2E175F2A2D93BA00BA1E5C /* PTSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		EB2E17602A2D93BA00BA1E5C /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				EB2E176A2A2D970300BA1E5C /* Info.plist */,
 				EB3792BA2A2D7F12007F02EF /* Assets.xcassets */,
 				EB3792BC2A2D7F12007F02EF /* Preview Content */,
+				E3F58A682A32834B008E2A8B /* TripsView.swift */,
 			);
 			path = TravelleR;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F58A692A32834B008E2A8B /* TripsView.swift in Sources */,
 				EB3792B92A2D7F10007F02EF /* ContentView.swift in Sources */,
 				EB3792B72A2D7F10007F02EF /* TravelleRApp.swift in Sources */,
 				EB2E176C2A2E4EE200BA1E5C /* LoginView.swift in Sources */,

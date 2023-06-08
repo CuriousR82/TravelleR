@@ -9,14 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack {
-            Color.init(red: 0.992, green: 0.992, blue: 0.953)
-                .ignoresSafeArea()
-            
-            VStack {
-                Text("this is the home screen")
+        NavigationStack {
+            ZStack {
+                Color.init(red: 0.992, green: 0.992, blue: 0.953)
+                    .ignoresSafeArea()
+                
+                VStack {
+                    Spacer()
+                    Text("this is the home screen")
+                    Spacer()
+                    NavigationLink(destination: TripsView(trips: ["Your mom's bedroom"])){
+                        Text("This is a link")
+                    }
+                    Spacer()
+                }.padding()
             }
-            .padding()
         }
     }
 }
