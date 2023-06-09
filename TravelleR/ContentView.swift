@@ -9,22 +9,52 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Color.init(red: 0.992, green: 0.992, blue: 0.953)
-                    .ignoresSafeArea()
-                
-                VStack {
-                    Spacer()
-                    Text("this is the home screen")
-                    Spacer()
-                    NavigationLink(destination: TripsView(trips: ["Your mom's bedroom"])){
-                        Text("This is a link")
+        
+            TabView {
+                NavigationStack {
+                    ZStack {
+                        Color.init(red: 0.992, green: 0.992, blue: 0.953)
+                            .ignoresSafeArea()
+                        Text("ContentView")
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                     }
-                    Spacer()
-                }.padding()
+                }
+                    .tabItem {
+                        Label("", systemImage: "house.fill")
+                            .labelStyle(.iconOnly)
+                    }
+                
+                AddTripView()
+                    .tabItem {
+                        Label("", systemImage: "plus")
+                            .labelStyle(.iconOnly)
+                    }
+                NotificationView()
+                    .tabItem {
+                        Label("", systemImage: "bell.fill")
+                            .labelStyle(.iconOnly)
+                    }
+                ProfileView()
+                    .tabItem {
+                        Label("", systemImage: "person.crop.circle.fill")
+                            .labelStyle(.iconOnly)
+                    }
             }
-        }
+            
+        
     }
 }
 
