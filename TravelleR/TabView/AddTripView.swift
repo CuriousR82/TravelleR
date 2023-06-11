@@ -9,12 +9,26 @@ import SwiftUI
 
 struct AddTripView: View {
     
+    let bgColour = Color.init(red: 0.992, green: 0.992, blue: 0.953)
+    let accentColour = Color.init(red: 0.2941, green: 0.4902, blue: 0.5922)
+    
     var body: some View {
-        ZStack {
-            Color.init(red: 0.992, green: 0.992, blue: 0.953)
-                .ignoresSafeArea()
-            
-            Text("AddTripView")
+        NavigationStack {
+            ZStack {
+                bgColour.ignoresSafeArea()
+                
+                // insert code for the current view here
+                VStack {
+                    Text("AddTripView")
+                        .padding()
+                        .frame(maxHeight: .infinity)
+                    
+                    Rectangle()
+                        .fill(Color.clear)
+                        .frame(height: 5)
+                        .background(accentColour)
+                }
+            }
         }
     }
 }
