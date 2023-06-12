@@ -12,22 +12,54 @@ struct AddTripView: View {
     let bgColour = Color.init(red: 0.992, green: 0.992, blue: 0.953)
     let accentColour = Color.init(red: 0.2941, green: 0.4902, blue: 0.5922)
     
+    let icons = ["person.3.sequence.fill", "location.fill", "calendar", "bus.fill", "gym.bag.fill", "fork.knife"]
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 bgColour.ignoresSafeArea()
                 
                 // insert code for the current view here
-                VStack {
-                    Text("AddTripView")
-                        .padding()
-                        .frame(maxHeight: .infinity)
+                VStack (alignment: .leading) {
+                    Text("Add a new trip!")
+                        .font(Font.custom("PTSans-Bold", size: 30))
+                        .padding(.leading, 2)
+                        
                     
-                    Rectangle()
-                        .fill(Color.clear)
-                        .frame(height: 5)
-                        .background(accentColour)
+                    VStack {
+                        ScrollView(.vertical, showsIndicators: false) {
+                            VStack {
+                                // VStack for each section
+                                // People
+                                ForEach(icons, id: \.self) { icon in
+                                    // wrapper stack
+                                    VStack (spacing: 24){
+                                        VStack {
+                                            HStack {
+                                                Image(systemName: icon)
+                                                Spacer()
+                                                Image(systemName: "chevron.forward")
+                                            }
+                                            .padding([.leading, .bottom, .trailing], 2)
+                                            
+                                            Rectangle()
+                                                .frame(height: 140)
+                                                .cornerRadius(10)
+                                                .foregroundColor(accentColour)
+                                        }
+                                        Spacer()
+                                    }
+                                }
+                            }
+                        }
+                        
+                        Rectangle()
+                            .fill(Color.clear)
+                            .frame(height: 5)
+                            .background(accentColour)
+                    }
                 }
+                .padding(.horizontal)
             }
         }
     }
