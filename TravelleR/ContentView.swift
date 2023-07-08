@@ -20,7 +20,7 @@ struct ContentView: View {
                     bgColour.ignoresSafeArea()
                     
                     // insert code for the current view here
-                    VStack {
+                    VStack (spacing: 0.5) {
                         Text("ContentView")
                             .padding()
                             .frame(maxHeight: .infinity)
@@ -36,7 +36,7 @@ struct ContentView: View {
                 Image(systemName: "house.fill")
             }
             
-            AddTripView()
+            AddTripView(addTripOptions: AddTripOptions.options)
                 .tabItem {
                     Image(systemName: "plus")
                 }
